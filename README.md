@@ -1,5 +1,5 @@
 # Neural-Backed Decision Trees VGG16 & CIFAR10
-A experiment with Neural-Backed Decision Trees using VGG16 as backbone and the CIFAR10 dataset. Original [code](!https://github.com/alvinwan/neural-backed-decision-trees/tree/master) and [paper](!https://arxiv.org/abs/2004.00221).
+A experiment with Neural-Backed Decision Trees using VGG16 as backbone and the CIFAR10 dataset. Original [code](https://github.com/alvinwan/neural-backed-decision-trees/tree/master) and [paper](https://arxiv.org/abs/2004.00221).
 
 
 ## Python Environment
@@ -39,4 +39,4 @@ cp graph-induced-vgg16.json $NBDT_PATH/hierarchies/CIFAR10  # copy induced hiera
 
 I pretrained a `VGG16` and `CIFAR10` dataset for `1 epoch` to build the induced hierarchy at `./graph-induced-vgg16.json`.
 
-A `Soft NBDT` was also trained with the built induced hierarchy for `2 epochs` as in `./vgg16.py`. The checkpoint can be found [here](!https://drive.google.com/file/d/1vXoSaZ2lM9cEojcJN-EcapUE0tabCsjs/view?usp=sharing).
+A `Soft NBDT` was also trained with the built induced hierarchy for `2 epochs` as in `./vgg16.py`. The checkpoint can be found [here](https://drive.google.com/file/d/1vXoSaZ2lM9cEojcJN-EcapUE0tabCsjs/view?usp=sharing).
