@@ -1,0 +1,17 @@
+pytorchcv
+requests
+pyparsing
+zipp
+torch>=2.0.0
+torchvision==0.15.1
+numpy==1.26.4
+nltk
+scikit-learn
+networkx
+pytest
+opencv-python==4.4.0.46
+matplotlib
+tqdm
+gradio
+notebook==6.0.0
+pygraphviz
