@@ -40,3 +40,39 @@ cp graph-induced-vgg16.json $NBDT_PATH/hierarchies/CIFAR10  # copy induced hiera
 I pretrained a `VGG16` and `CIFAR10` dataset for `1 epoch` to build the induced hierarchy at `./graph-induced-vgg16.json`.
 
 A `Soft NBDT` was also trained with the built induced hierarchy for `2 epochs` as in `./vgg16.py`. The checkpoint can be found [here](https://drive.google.com/file/d/1vXoSaZ2lM9cEojcJN-EcapUE0tabCsjs/view?usp=sharing).
+
+## Generate a new Induced Hierarchy
+
+Edit in `$NBDT_PATH/graph.py` to recognize the last layer of the VGG16 model, which is the `classifier.6` layer.
+```python
+################
+# INDUCED TREE #
+################
+
+
+MODEL_FC_KEYS = (
+    "fc.weight",
+    "linear.weight",
+    "module.linear.weight",
+    "module.net.linear.weight",
+    "output.weight",
+    "module.output.weight",
+    "output.fc.weight",
+    "module.output.fc.weight",
+    "classifier.weight",
+    "classifier.6.weight",  # add this line
+    "model.last_layer.3.weight",
+)
+```
+
+Make sure to be in the `nbdt-experiment` folder that you cloned. Then, you have to copy the `wnids` folder located in pip directories to your local `./nbdt/wnids`.
+```shell
+cd nbdt-experiment  # make sure to be in the correct folder
+mkdir ./nbdt/wnids
+cp $NBDT_PATH/wnids/CIFAR10.txt ./nbdt/wnids/
+```
+
+After you generate the Induced Hierarchy, it will save at `./nbdt/hierarchies/CIFAR10`. Make sure to copy the generated induced hierarchy to the package installation directory.
+```shell
+cp ./nbdt/hierarchies/CIFAR10/graph-induced-vgg16.json $NBDT_PATH/hierarchies/CIFAR10/
+```
